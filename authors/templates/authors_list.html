@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block title %}Список авторов{% endblock %}
+{% block main %}
+<div class="container">
+<ol class="breadcrumb">
+    <li><a href="/">Главная</a> </li>
+    <li class="active">Авторы</li>
+</ol>
+</div>
+<div class="container">
+<div class="row">
+    <div class="col-md-3">
+        <ul class="list-unstyled">
+            {% for authors in object_list %}
+            <li><a href="{% url 'author-detail' authors.slug %}">{{ authors.name }} {{ authors.surname }}</a> </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+</div>
+<div class="container" align="center">
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <div class="nav">
+            <ul class="pagination">
+                <li>
+                    <a href="#" aria-label="Предыдущий"><span aria-hidden="true">&laquo;</span></a>
+                </li>
+                <li><a href="#">1</a> </li>
+                <li><a href="#">2</a> </li>
+                <li><a href="#">3</a> </li>
+                <li><a href="#">4</a> </li>
+                <li>
+                    <a href="#" aria-label="Следущий"><span aria-hidden="true">&raquo;</span> </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-4"></div>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link href="{% static 'asserts/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'asserts/css/base.css' %}" rel="stylesheet">
+</head>
+<body>
+{% include 'nav.html' %}
+{% block main %}{% endblock %}
+{% include 'footer.html' %}
+<script src="{% static 'asserts/js/jquery-2.2.2.min.js' %}"></script>
+<script src="{% static 'asserts/js/bootstrap.min.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<header>
+    <nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <ul class="nav nav-pills">
+                        <li><a href="/">Главная</a> </li>
+                        <li><a href="{% url 'authors-index' %}">Авторы</a> </li>
+                        <li><a href="#">Книги</a> </li>
+                        <li role="presentation" class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                               aria-expanded="false">Жанры<span class="caret"></span> </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Классика</a> </li>
+                                <li><a href="#">Фантастика</a> </li>
+                                <li><a href="#">Фэнтези</a> </li>
+                                <li class="divider" role="separator"></li>
+                                <li><a href="#">Отобразить жанры</a> </li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Новинки</a> </li>
+                        <li><a href="#">Популярное</a> </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <form method="get" action="{% url 'search' %}">
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="q" placeholder="По автору или названию книги">
+                            <span class="input-group-btn">
+                                <!--<button class="btn btn-default" type="submit">найти</button>-->
+                                <input class="btn btn-default" type="submit" value="найти">
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>

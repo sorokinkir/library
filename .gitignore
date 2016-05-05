@@ -1,0 +1,5 @@
+/.idea/
+/env/
+/media_cdn/
+/static_cdn/
+*.sqlite3

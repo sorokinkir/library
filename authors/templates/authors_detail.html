@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}Авторы :: {{ authors.name }} {{ authors.surname }}{% endblock %}
+{% block main %}
+<div class="container">
+<article>
+<ol class="breadcrumb">
+    <li><a href="/">Главная</a> </li>
+    <li><a href="{% url 'authors-index' %}">Авторы</a></li>
+    <li class="active">{{ authors.name }} {{ authors.surname }}</li>
+</ol>
+</article>
+<div class="row">
+    <div class="col-md-3" align="center">
+            <img class="thumbnail" src="http://placehold.it/220x180" alt="{{ authors.surname }} {{ authors.name }}">
+    </div>
+    <div class="col-md-9">
+        <p>{{ authors.biography|safe }}</p>
+    </div>
+</div>
+<hr>
+<article>
+    <p>Тут будут списки с сериями и книгами в серии</p>
+    <b>Серия "хрен вам"</b>
+    <ul class="list-unstyled">
+        <li><a href="#">Книга 1</a> </li>
+        <li><a href="#">Книга 2</a> </li>
+    </ul>
+</article>
+</div>
+{% endblock %}
