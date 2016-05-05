@@ -81,12 +81,19 @@ WSGI_APPLICATION = 'library.wsgi.application'
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
 DATABASES = {
+#    'default': {
+#        'ENGINE': 'mysql.connector.django',
+#        'NAME': 'lib',
+#        'USER': 'lib',
+#        'PASSWORD': 'aequ6Ahz',
+#        'HOST': '10.30.0.2',
+#	'OPTIONS': {
+#		'autocommit':True,
+#	},
+#    }
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'lib',
-        'USER': 'lib',
-        'PASSWORD': 'aequ6Ahz',
-        'HOST': '10.30.0.2',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
