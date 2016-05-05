@@ -2,4 +2,8 @@
 /env/
 /media_cdn/
 /static_cdn/
+/authors/migrations/
+/books/migrations/
+/news/migrations/
 *.sqlite3
+*.pyc
