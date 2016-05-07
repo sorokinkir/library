@@ -81,18 +81,16 @@ WSGI_APPLICATION = 'library.wsgi.application'
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
 DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#    }
 	'default': {
-		'ENGINE': 'django.db.backends.mysql',
-		'OPTIONS': {
-			'read_default_file' : os.path.join(BASE_DIR, 'my.cnf'),
-			'init_command': 'SET default_storage_engine=INNODB',
-		},
+                'ENGINE': 'django.db.backends.mysql',
+		'HOST': DATABASE_HOST,
+                'OPTIONS': {
+                        'read_default_file' : os.path.join(BASE_DIR, 'my.cnf'),
+                        'init_command': 'SET default_storage_engine=INNODB',
+                },
 	}
 }
+
 
 
 # Password validation
@@ -127,6 +125,8 @@ USE_L10N = True
 
 USE_TZ = True
 
+
+# Magic import
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
