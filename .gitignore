@@ -7,3 +7,5 @@
 /news/migrations/
 *.sqlite3
 *.pyc
+my.cnf
+secret_key.py

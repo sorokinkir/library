@@ -15,17 +15,17 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'r+j#=(bad-s_^@sb@f6$-ku887robzzbqgi@yqia4uzie)2ev3'
+
+from secret_key import *
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['any']
 
 
 # Application definition
@@ -87,14 +87,22 @@ DATABASES = {
 #        'USER': 'lib',
 #        'PASSWORD': 'aequ6Ahz',
 #        'HOST': '10.30.0.2',
-#	'OPTIONS': {
+#        'OPTIONS': {
 #		'autocommit':True,
 #	},
 #    }
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#    }
+	'default': {
+		'ENGINE': 'django.db.backends.mysql',
+		'HOST': '94.229.228.242',
+		'OPTIONS': {
+			'read_default_file' : os.path.join(BASE_DIR, 'my.cnf'),
+			'init_command': 'SET default_storage_engine=INNODB',
+		},
+	}
 }
 
 
