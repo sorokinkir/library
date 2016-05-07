@@ -82,22 +82,11 @@ WSGI_APPLICATION = 'library.wsgi.application'
 
 DATABASES = {
 #    'default': {
-#        'ENGINE': 'mysql.connector.django',
-#        'NAME': 'lib',
-#        'USER': 'lib',
-#        'PASSWORD': 'aequ6Ahz',
-#        'HOST': '10.30.0.2',
-#        'OPTIONS': {
-#		'autocommit':True,
-#	},
-#    }
-#    'default': {
 #        'ENGINE': 'django.db.backends.sqlite3',
 #        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #    }
 	'default': {
 		'ENGINE': 'django.db.backends.mysql',
-		'HOST': '94.229.228.242',
 		'OPTIONS': {
 			'read_default_file' : os.path.join(BASE_DIR, 'my.cnf'),
 			'init_command': 'SET default_storage_engine=INNODB',
