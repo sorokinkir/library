@@ -39,7 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'authors.apps.AuthorsConfig'
+    'authors.apps.AuthorsConfig',
+    'news.apps.NewsConfig',
+
+    # Батарейки
+
+    'ckeditor',
 ]
 
 MIDDLEWARE_CLASSES = [
