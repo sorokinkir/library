@@ -1,3 +1,6 @@
 from django.db import models
 
-# Create your models here.
+
+class News(models.Model):
+    """Класс новостей"""
+    title = models.CharField("Заголовок", max_length=100)
