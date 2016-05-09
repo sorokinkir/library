@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
+from secret_key import *
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,9 +21,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-from secret_key import *
+SECRET_KEY = SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
+
 DEBUG = True
 
 ALLOWED_HOSTS = ['any']
@@ -81,16 +83,15 @@ WSGI_APPLICATION = 'library.wsgi.application'
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
 DATABASES = {
-	'default': {
-                'ENGINE': 'django.db.backends.mysql',
-		'HOST': DATABASE_HOST,
-                'OPTIONS': {
-                        'read_default_file' : os.path.join(BASE_DIR, 'my.cnf'),
-                        'init_command': 'SET default_storage_engine=INNODB',
-                },
-	}
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'HOST': DATABASE_HOST,
+        'OPTIONS': {
+            'read_default_file': os.path.join(BASE_DIR, 'my.cnf'),
+            'init_command': 'SET default_storage_engine=INNODB',
+        },
+    }
 }
-
 
 
 # Password validation
