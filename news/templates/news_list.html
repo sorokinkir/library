@@ -7,6 +7,15 @@
     </ol>
 </div>
 <div class="container">
-<p>Список новостей</p>
+{% for news_list in object_list %}
+    <div class="thumbnail">
+        <div class="caption">
+            <b>{{ news_list.title }}</b>
+            <p align="right">{{ news_list.create_date }}</p>
+            <p>{{ news_list.content|safe }}</p>
+            <p><a href="#">Подробнее</a> </p>
+        </div>
+    </div>
+{% endfor %}
 </div>
 {% endblock %}
