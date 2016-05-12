@@ -83,7 +83,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'library.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
@@ -147,3 +146,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media_cdn')
 
 
 ADMINS = [('Kirill', 'mr.pypy@yandex.ru')]
+
+# CKEDITOR
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
+CKEDITOR_IMAGE_BACKEND = "pillow"
