@@ -23,7 +23,7 @@
                     </ul>
                 </div>
                 <div class="col-md-4">
-                    <form method="get" action="{% url 'search' %}">
+                    <form method="post" action="{% url 'search' %}">{% csrf_token %}
                         <div class="input-group">
                             <input type="text" class="form-control" name="q" placeholder="По автору или названию книги">
                             <span class="input-group-btn">
