@@ -1,6 +1,4 @@
 from django.db import models
-from django.core.urlresolvers import reverse
-#from unidecode import unidecode
 from django.template.defaultfilters import slugify
 
 
@@ -29,6 +27,6 @@ class Authors(models.Model):
 
     def save(self):
         if not self.id:
-            newslug='{0} {1}'.format(self.name,self.surname)
-            self.slug=slugify(newslug)
+            newslug = '{0} {1}'.format(self.name, self.surname)
+            self.slug = slugify(newslug)
         super(Authors, self).save()
