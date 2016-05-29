@@ -22,7 +22,7 @@ from authors import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'', include('news.urls')),
+    url(r'^$', include('news.urls')),
     url(r'^authors/', include('authors.urls')),
     url(r'^search/$', views.Search.as_view(), name='search'),
 
