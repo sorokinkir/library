@@ -39,8 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'authors.apps.AuthorsConfig',
     'news.apps.NewsConfig',
+    'authors.apps.AuthorsConfig',
 
     # Батарейки
 
