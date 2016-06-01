@@ -27,6 +27,6 @@ class Authors(models.Model):
 
     def save(self):
         if not self.id:
-            newslug = '{0} {1}'.format(self.name, self.surname)
-            self.slug = slugify(newslug)
+            news_slug = '{0} {1}'.format(self.name, self.surname)
+            self.slug = slugify(news_slug)
         super(Authors, self).save()
