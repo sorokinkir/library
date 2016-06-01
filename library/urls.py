@@ -18,13 +18,14 @@ from django.conf.urls.static import static
 from django.conf.urls import url, include
 from django.contrib import admin
 
-from authors import views
+from news.views import IndexView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'', include('news.urls')),
+    url(r'^$', IndexView.as_view(), name='home'),
+    url(r'^news/', include('news.urls')),
     url(r'^authors/', include('authors.urls')),
-    url(r'^search/$', views.Search.as_view(), name='search'),
+    # url(r'^search/$', views.Search.as_view(), name='search'),
 
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
 ]
