@@ -19,7 +19,7 @@ class AuthorsDetail(DetailView):
     template_name = 'authors_detail.html'
 
     def get_object(self, queryset=None):
-        return get_object_or_404(Authors, slug__iexact=self.kwargs['slug'])
+        return get_object_or_404(Authors, slug=self.kwargs['slug'])
 
 
 class Search(View):
