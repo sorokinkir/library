@@ -1,1 +1,30 @@
 {% extends 'base.html' %}
+{% block title %}Новость :: {{ news.title }}{% endblock %}
+{% block main %}
+<div class="container">
+    <ol class="breadcrumb">
+        <li><a href="{% url 'home' %}">Новости</a> </li>
+        <li><a href="#">{{ news.title }}</a> </li>
+    </ol>
+</div>
+<div class="container">
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <a href="{% url 'home' %}">Вернуться назад</a>
+    </div>
+</div>
+<div class="container">
+    <b>{{ news.title|title }}</b>
+    <p>{{ news.content|safe }}</p>
+</div>
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <a href="{% url 'home' %}">Вернуться назад</a>
+    </div>
+</div>
+</div>
+{% endblock %}
