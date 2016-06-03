@@ -3,7 +3,7 @@
 {% block main %}
 <div class="container">
     <ol class="breadcrumb">
-        <li><a href="/">Главная</a> </li>
+        <li><a href="{% url 'home' %}">Новости</a> </li>
     </ol>
 </div>
 <div class="container">
@@ -12,8 +12,8 @@
         <div class="caption">
             <b>{{ news_list.title }}</b>
             <p align="right">{{ news_list.create_date }}</p>
-            <p>{{ news_list.content|safe }}</p>
-                <p><a href="{% url 'news-detail' news_list.slug %}">Подробнее</a> </p>
+            <p>{{ news_list.content|safe|truncatechars_html:300 }}</p>
+            <p><a href="{% url 'news-detail' news_list.slug %}">Подробнее</a></p>
         </div>
     </div>
 {% endfor %}
